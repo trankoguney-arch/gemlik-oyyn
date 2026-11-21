@@ -1,0 +1,24 @@
+GEMLİK AÇIK DÜNYA - Masaüstü oyunu
+
+KURULUM (sadece ilk seferde, internet gerekir):
+1. https://nodejs.org adresinden Node.js (LTS) kurun.
+2. Windows: BASLAT.bat dosyasına çift tıklayın.
+   Mac/Linux: terminalde ./baslat.sh çalıştırın.
+   İlk açılışta gerekli dosyalar (Electron, three.js) otomatik indirilir.
+Oyun tam ekran, tarayıcısız bir pencerede açılır.
+
+KONTROLLER
+W/S gaz-fren (yayayken yürü) | A/D direksiyon | Boşluk el freni
+Shift koş | E araca bin/in | F yumruk | R yeniden doğ
+N zamanı 3 saat ileri sar | F11 tam ekran aç/kapat | Alt+F4 çıkış
+
+.EXE YAPMAK İÇİN (Windows, tek seferlik):
+  npm install
+  npm run dist
+Çıktı dist\GemlikOyun-win32-x64\GemlikOyun.exe dosyasıdır; klasörün tamamını taşıyın.
+
+NODE KURMADAN .EXE ALMAK İÇİN (GitHub ile, ücretsiz):
+1. github.com'da hesap açın, yeni bir depo (repository) oluşturun.
+2. Bu klasörün içindekileri (.github klasörü dahil) depoya yükleyin.
+3. Depoda Actions sekmesi > "exe-olustur" > Run workflow deyin.
+4. İşlem bitince "GemlikOyun-windows" dosyasını indirin; içindeki GemlikOyun.exe oyunu açar.
