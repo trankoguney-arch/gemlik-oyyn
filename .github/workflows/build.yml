@@ -1,0 +1,25 @@
+name: exe-olustur
+on:
+  workflow_dispatch:
+  push:
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Proje klasorunu bul
+        shell: bash
+        run: |
+          f=$(find . -name package.json -not -path '*/node_modules/*' | head -1)
+          echo "PROJ=$(dirname "$f")" >> "$GITHUB_ENV"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+        working-directory: ${{ env.PROJ }}
+      - run: npm run dist
+        working-directory: ${{ env.PROJ }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: GemlikOyun-windows
+          path: ${{ env.PROJ }}/dist/GemlikOyun-win32-x64
